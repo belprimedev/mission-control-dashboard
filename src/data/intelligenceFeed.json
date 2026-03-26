@@ -1,0 +1,67 @@
+[
+  {
+    "id": "intel-001",
+    "headline": "Upwork Profile 85% Complete — Ready to Start Earning",
+    "whatHappened": "Profile created with premium positioning ($100/hr), assessment questions answered with ownership/momentum framing. Portfolio linked to shanebell.dev.",
+    "whyItMatters": "Upwork is our primary revenue channel for Phase 1. Every day without proposals is lost revenue. Profile is sufficient to start bidding now.",
+    "opportunityAngle": "Create project catalog (fixed-price packages) and submit first 5 proposals targeting Shopify automation jobs this week.",
+    "recommendedAction": "1. Create Upwork project catalog entries for our 4 service packages. 2. Draft 2-3 proposal templates. 3. Submit first proposals today.",
+    "priority": "High",
+    "category": "Opportunities",
+    "timestamp": "2026-03-26T17:00:00Z",
+    "saved": false,
+    "dismissed": false
+  },
+  {
+    "id": "intel-002",
+    "headline": "Fiverr Seller Onboarding Blocked — W-9 Form Bug",
+    "whatHappened": "Fiverr's W-9 tax form has an infinite loading spinner. Browser automation attempts were detected and blocked. Support contact needed.",
+    "whyItMatters": "Fiverr is the second marketplace channel. Being blocked here means all early revenue depends on Upwork alone — single point of failure.",
+    "opportunityAngle": "Contact Fiverr support directly. Meanwhile, double down on Upwork proposals and consider listing services on shanebell.dev with Stripe payments.",
+    "recommendedAction": "File Fiverr support ticket about W-9 form. Set up Stripe on shanebell.dev as a backup payment channel.",
+    "priority": "Medium",
+    "category": "Tools",
+    "timestamp": "2026-03-25T22:00:00Z",
+    "saved": false,
+    "dismissed": false
+  },
+  {
+    "id": "intel-003",
+    "headline": "Model Fallback System Deployed — No More Lockouts",
+    "whatHappened": "Configured native OpenClaw model fallback: Opus 4.6 → Sonnet 4.6 → Kimi K2.5. Gateway handles failover automatically. Manual switch via /model command.",
+    "whyItMatters": "Previously hit a hard rate limit on Opus that made the entire system unreachable. This can never happen again — Kimi (free tier) is always available as nuclear fallback.",
+    "opportunityAngle": "System resilience is solved. Focus can shift entirely to revenue generation without worrying about infrastructure failures.",
+    "recommendedAction": "No action needed — system is production-ready. Monitor via /model status.",
+    "priority": "Low",
+    "category": "OpenClaw Improvements",
+    "timestamp": "2026-03-26T18:40:00Z",
+    "saved": false,
+    "dismissed": false
+  },
+  {
+    "id": "intel-004",
+    "headline": "3 Product Ideas Scored and Ranked for Phase 2",
+    "whatHappened": "Evaluated 3 revenue ideas: Shopify Automation Templates (23/25), AI Store Audit Tool (21/25), Automation in a Box (20/25). All stored in IDEAS.md with scoring framework.",
+    "whyItMatters": "Phase 2 (digital products) is where scalable revenue lives. Having pre-scored ideas means we can immediately start building when Phase 1 services validate demand.",
+    "opportunityAngle": "Templates marketplace is #1 priority for Phase 2. Service clients on Upwork will reveal exactly which templates to build first — real demand data.",
+    "recommendedAction": "Continue Phase 1 (Upwork services). Track which automations clients request most. Build those as templates first.",
+    "priority": "Medium",
+    "category": "Opportunities",
+    "timestamp": "2026-03-26T19:10:00Z",
+    "saved": false,
+    "dismissed": false
+  },
+  {
+    "id": "intel-005",
+    "headline": "Nerve Cockpit — Feature Inventory for Future UI Build",
+    "whatHappened": "Reviewed openclaw-nerve (community project). Identified high-value features: kanban board, cost tracking, agent fleet management, workspace file browser, voice interface.",
+    "whyItMatters": "As we scale to multiple agents (Strategist, Developer, Marketer), visibility into what each agent is doing becomes critical. Current CLI-only workflow won't scale.",
+    "opportunityAngle": "Build our own lightweight dashboard with P1 features (kanban + cost tracking) when revenue justifies the time investment.",
+    "recommendedAction": "Parked for now. Revisit when running 3+ concurrent agents regularly.",
+    "priority": "Low",
+    "category": "Tools",
+    "timestamp": "2026-03-26T17:55:00Z",
+    "saved": false,
+    "dismissed": false
+  }
+]

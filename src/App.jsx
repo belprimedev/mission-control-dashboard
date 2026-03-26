@@ -19,6 +19,7 @@ import {
   Package
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import IntelligenceFeed from './components/IntelligenceFeed';
 import './index.css';
 
 // ============================================
@@ -51,7 +52,7 @@ const initialData = {
   platforms: [
     { id: 1, name: 'shanebell.dev', status: 'live', url: 'http://64.227.32.144:8080/', notes: 'Portfolio deployed' },
     { id: 2, name: 'Fiverr', status: 'blocked', url: '-', notes: 'W-9 form technical issue - contact support' },
-    { id: 3, name: 'Upwork', status: 'pending', url: '-', notes: 'Alternative to Fiverr' },
+    { id: 3, name: 'Upwork', status: 'in-progress', url: 'https://upwork.com', notes: 'Profile 85% complete — ready for proposals' },
     { id: 4, name: 'Gumroad', status: 'pending', url: '-', notes: 'Account creation needed' },
   ],
   metrics: {
@@ -236,20 +237,25 @@ function App() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Strategic Pivot Banner */}
-        <div className="mb-8 p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+        {/* Strategy Banner */}
+        <div className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
           <div className="flex items-center space-x-3">
-            <div className="p-2 bg-blue-500/20 rounded-lg">
-              <TrendingUp className="text-blue-400" size={20} />
+            <div className="p-2 bg-emerald-500/20 rounded-lg">
+              <TrendingUp className="text-emerald-400" size={20} />
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-blue-400">Strategic Pivot — March 25, 2026</h3>
+              <h3 className="text-sm font-semibold text-emerald-400">Active Strategy — Hybrid Product + Service Model</h3>
               <p className="text-xs text-slate-400 mt-1">
-                OLD: Cold email agency targeting enterprises → NEW: Productized services on Fiverr/Upwork + Digital products
+                Phase 1: Productized services on Upwork/Fiverr → Phase 2: Digital products → Phase 3: Scale to £100K
               </p>
             </div>
           </div>
         </div>
+
+        {/* Intelligence Feed */}
+        <section className="mb-8">
+          <IntelligenceFeed />
+        </section>
 
         {/* Goals Section */}
         <section className="mb-8">
