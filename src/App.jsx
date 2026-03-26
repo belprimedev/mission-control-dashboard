@@ -50,8 +50,8 @@ const initialData = {
   ],
   platforms: [
     { id: 1, name: 'shanebell.dev', status: 'live', url: 'http://64.227.32.144:8080/', notes: 'Portfolio deployed' },
-    { id: 2, name: 'Fiverr', status: 'pending', url: '-', notes: 'Account creation needed' },
-    { id: 3, name: 'Upwork', status: 'pending', url: '-', notes: 'Account creation needed' },
+    { id: 2, name: 'Fiverr', status: 'blocked', url: '-', notes: 'W-9 form technical issue - contact support' },
+    { id: 3, name: 'Upwork', status: 'pending', url: '-', notes: 'Alternative to Fiverr' },
     { id: 4, name: 'Gumroad', status: 'pending', url: '-', notes: 'Account creation needed' },
   ],
   metrics: {
@@ -66,8 +66,8 @@ const initialData = {
     inquiries: 0,
   },
   blockers: [
-    { id: 1, item: 'Fiverr seller account', status: 'waiting', owner: 'Prime', notes: 'Sign up at fiverr.com' },
-    { id: 2, item: 'Upwork freelancer profile', status: 'waiting', owner: 'Prime', notes: 'Sign up at upwork.com' },
+    { id: 1, item: 'Fiverr W-9 form submission', status: 'blocked', owner: 'Prime', notes: 'Infinite spinner - contact Fiverr support' },
+    { id: 2, item: 'Upwork freelancer profile', status: 'waiting', owner: 'Prime', notes: 'Alternative path - no tax form required' },
     { id: 3, item: 'Gumroad account', status: 'waiting', owner: 'Prime', notes: 'Sign up at gumroad.com' },
   ],
   operationsLog: [
@@ -81,6 +81,9 @@ const initialData = {
     { id: 8, time: '20:02', action: 'Mission Control updated', result: 'All assets documented' },
     { id: 9, time: '20:30', action: 'Dashboard restarted', result: 'Mission Control live at :5174' },
     { id: 10, time: '20:33', action: 'Dashboard data updated', result: 'New goals and status reflected' },
+    { id: 11, time: '23:25', action: 'Fiverr seller activation attempted', result: 'W-9 form blocked by technical issue' },
+    { id: 12, time: '23:53', action: 'Cookie-based automation attempted', result: 'Fiverr detected and blocked access' },
+    { id: 13, time: '00:12', action: 'Session ended', result: 'Progress saved to memory' },
   ],
 };
 
@@ -98,6 +101,7 @@ const StatusBadge = ({ status }) => {
     'decision': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
     'ready': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
     'live': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+    'blocked': 'bg-rose-500/20 text-rose-400 border-rose-500/30',
     'planned': 'bg-slate-600/20 text-slate-400 border-slate-600/30',
   };
   
@@ -110,6 +114,7 @@ const StatusBadge = ({ status }) => {
     'decision': 'Decision',
     'ready': 'Ready',
     'live': 'Live',
+    'blocked': 'Blocked',
     'planned': 'Planned',
   };
   
