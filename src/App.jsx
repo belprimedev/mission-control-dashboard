@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import IntelligenceFeed from './components/IntelligenceFeed';
+import { Radar } from 'lucide-react';
 import './index.css';
 
 // ============================================
@@ -188,6 +189,7 @@ function App() {
   const [data, setData] = useState(initialData);
   const [lastRefresh, setLastRefresh] = useState(new Date());
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [activeTab, setActiveTab] = useState('dashboard');
 
   const handleRefresh = () => {
     setIsRefreshing(true);
@@ -216,7 +218,7 @@ function App() {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-white">Mission Control</h1>
-                <p className="text-xs text-slate-400">Real-time operations dashboard • Strategic Pivot Active</p>
+                <p className="text-xs text-slate-400">Real-time operations dashboard</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -236,7 +238,46 @@ function App() {
         </div>
       </header>
 
+      {/* Tab Navigation */}
+      <nav className="border-b border-slate-800 bg-slate-900/80 sticky top-[73px] z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-1 -mb-px">
+            {[
+              { id: 'dashboard', label: 'Dashboard', icon: Zap },
+              { id: 'intelligence', label: 'Intelligence', icon: Radar },
+            ].map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`
+                    flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all duration-150 border-b-2 cursor-pointer
+                    ${isActive
+                      ? 'border-emerald-400 text-emerald-400'
+                      : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-600'}
+                  `}
+                >
+                  <Icon size={16} />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        {/* ========== INTELLIGENCE TAB ========== */}
+        {activeTab === 'intelligence' && (
+          <IntelligenceFeed />
+        )}
+
+        {/* ========== DASHBOARD TAB ========== */}
+        {activeTab === 'dashboard' && (
+        <div>
         {/* Strategy Banner */}
         <div className="mb-8 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
           <div className="flex items-center space-x-3">
@@ -251,11 +292,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* Intelligence Feed */}
-        <section className="mb-8">
-          <IntelligenceFeed />
-        </section>
 
         {/* Goals Section */}
         <section className="mb-8">
@@ -475,6 +511,8 @@ function App() {
             </Card>
           </section>
         </div>
+        </div>
+        )}
       </main>
 
       {/* Footer */}
